@@ -1,6 +1,6 @@
 # HW0: Preliminaries 
 
-The computing portion of Homework 0 consists of: 
+The computing portion of Homework 0 consists of the following. 
 
 **Programming environment set-up.**
 
