@@ -82,7 +82,7 @@ After you have installed conda (on any machine), open a terminal and run the fol
 ```
 conda -V 
 ```
-Your conda version should be equal to or greater than `22.11.0`. 
+Make sure your local conda version is the version you intended to download. 
 
 
 ## Part 2: Git set-up  
