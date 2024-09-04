@@ -15,75 +15,25 @@ Complete the following four parts to ensure that your environment is set-up corr
 
 ## Part 1: Installing Miniconda 
 
-### 1A. Own Machine (recommended)
+### 1. Miniconda installation 
 
 We will use [miniconda](https://docs.conda.io/en/latest/miniconda.html) to install Python and related packages.
 
-We require `Python 3.8`. Be sure that you install the Python 3.8 version and not the latest Python version. This is the version of Python other packages depend on.  
+Navigate to [miniconda installer webpage](https://docs.anaconda.com/miniconda/). We are using "Conda 24.7.1 Python 3.12.4 released Aug 22, 2024". 
 
-#### Mac 
-Navigate to [this section of the miniconda installer webpage](https://docs.conda.io/en/latest/miniconda.html#macos-installers). 
+Download the install that matches your machine's OS (and chips for Apple machines). For a Mac, you can look this up by choosing the Apple logo in the top left of the screen and then choose `About this Mac`. 
 
-If you have an Intel chip download: 
-```
-Python 3.8 > Miniconda3 macOS Intel x86 64-bit pkg
-```
+Note: If you already have an anaconda or miniconda installation, it may be helpful to uninstall those versions and reinstall fresh to make sure you have the correct version numbers. 
 
-If you have a M1 chip download: 
-```
-Python 3.8 > Miniconda3 macOS Apple M1 ARM 64-bit pkg
-```
+### 2. After miniconda installation 
 
-#### Linux 
+After installation, close and reopen your terminal. If you installed miniconda correctly, you should now see `(base)` at the beginning of your shell prompt. 
 
-Navigate to [this section of the miniconda installer webpage](https://docs.conda.io/en/latest/miniconda.html#linux-installers). 
-
-Download 
-```
-Python 3.8 > Miniconda3 Linux 64-bit
-```
-
-
-### 1B. Williams CS machines (not recommended)
-
-We DO NOT recommend using Williams machines for this class. We will be using Jupyter Notebooks extensively and setting these up to interact with ssh is a bit more complicated. However, we provide instructions here for extenuating circumstances. 
-
-Instructions for Williams VPN and the ssh servers available are on [this page](https://www.cs.williams.edu/systems/). If you forgot your password and need to reset, please email Lida Doret (lpd2@williams.edu). 
-
-Steps: 
-
-1. If not connected to the network, log into your VPN
-	2. Log into a compute server available from off campus, e.g.
-	```
-	ssh jcool@lohani.cs.williams.edu
-	```
-3. Run the following commands in the terminal to update bash settings and use conda
-
-	```
-	cd /usr/cs-local/c375_katie
-	./c375_bashrc_update.sh
-	```
-4. Logout
-5. Log Back In
-
-
-On the Williams servers, this version of miniconda lives in 
-```
-/etc/miniconda3/bin/conda
-```
-You con confirm this by typing this command on the command line: 
-```
-which conda
-```
-
-### 2. After Conda installation 
-After you have installed conda (on any machine), open a terminal and run the following command to see the conda version 
+Run the following command to make sure you installed the version of conda you intended to: 
 
 ```
 conda -V 
 ```
-Make sure your local conda version is the version you intended to download. 
-
 
 ## Part 2: Git set-up  
 
@@ -114,13 +64,17 @@ Git set-up:
 
 ## Part 3: Creating a Conda environment 
 
-1. Create a conda environment with the necessary dependencies. Note, you should run the following commands in the directory containing `environment.yml` (e.g. the directory `hw0-preliminaries` which you should already be in after completing the steps in Part 2 of these instructions):
+1. Let's create a conda environment with the necessary dependencies. 
+
+	Note, you should run the following commands in the directory containing `environment.yml` (e.g. the directory `hw0-preliminaries` which you should already be in after completing the steps in Part 2 of these instructions). 
 
 	```
-	conda env create -f environment.yml
+	conda  env create -f environment.yml
 	```
 	
 	This will create a new Python environment -- you can think of this as a separate, clean installation of Python that we can install packages in without messing with any existing Python setup you may have. Then it will look up all of the packages in `environment.yml`, go to the internet and download them, and then install them in the environment. If those packages require any other packages for them to work, it will also install those.
+
+	Open the `environment.yml` file and you can see the various package versions we will be using in this class. Note, we are using `Python 3.11`. 
 	
 	Note that this downloading and installation process may take a few minutes, that's entirely normal.
 
@@ -129,7 +83,7 @@ Git set-up:
 	```
 	conda activate cs375
 	```
-	You should now see `(cs375)` in front of your shell prompt. You'll need to run `conda activate cs375` every time you open a new terminal and re-start your notebook server.
+	You should now see `(cs375)` at the beginning of your shell prompt. You'll need to run `conda activate cs375` every time you open a new terminal and re-start your notebook server.
 
 ## Part 4: Jupyter notebooks 
 
